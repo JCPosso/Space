@@ -46,13 +46,13 @@ public class Display extends Canvas implements Runnable{
 		}
 	}
 
-	public static StateMachine state;
+	public static GameScreen game;
 	public Display() {
 		this.setSize(WIDTH, HEIGHT);
 		this.setFocusable(true);
 
-		state = new StateMachine(this);
-		state.setState(); 
+		game = new GameScreen(this);
+		game.setState();
 	}
 
 	@Override
@@ -82,7 +82,7 @@ public class Display extends Canvas implements Runnable{
 				g.setColor(Color.BLACK);
 				g.fillRect(0, 0, WIDTH + 50, HEIGHT + 50);
 				
-				state.draw(g);
+				game.draw(g);
 
 				g.dispose();
 			} while (bs.contentsRestored());
@@ -91,7 +91,7 @@ public class Display extends Canvas implements Runnable{
 	}
 
 	public void update(double delta) {
-		state.update(delta);
+		game.update(delta);
 	}
 
 }
