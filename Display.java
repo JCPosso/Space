@@ -51,10 +51,9 @@ public class Display extends Canvas implements Runnable{
 		this.setSize(WIDTH, HEIGHT);
 		this.setFocusable(true);
 
-		game = new GameScreen(this);
-		game.setState();
+		game = new GameScreen();
+		game.init(this);
 	}
-
 	@Override
 	public void run() {
 		long timer = System.currentTimeMillis();
