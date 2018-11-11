@@ -1,5 +1,4 @@
 package aplicacion;
-
 import java.awt.Canvas;
 import java.awt.Graphics2D;
 import java.util.ArrayList;
@@ -14,10 +13,10 @@ public class GameScreen  {
 	
 	public static int SCORE = 0;
 	
-	private Font gameScreen = new Font("Arial", Font.PLAIN, 48);
+	private Font gameScreen = new Font("Arial", Font.PLAIN, 48);	
+	public GameScreen( ) {
+		player = new Player(Display.WIDTH/2-50, Display.HEIGHT-75, 100, 100);
 
-	public GameScreen() {
-		player = new Player(Display.WIDTH/2-50, Display.HEIGHT-75, 50, 50);
 	}
 	
 	public void update(double delta) {
@@ -34,10 +33,7 @@ public class GameScreen  {
 		
 		
 		player.draw(g);
-		
-
-	}
-
+		}
 	public void init(Canvas canvas) {
 		
 		canvas.addKeyListener(player);
