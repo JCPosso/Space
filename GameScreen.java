@@ -24,14 +24,12 @@ public class GameScreen  {
 	private Font gameScreen = new Font("Arial", Font.PLAIN, 48);	
 	
 	public GameScreen( ) {
-		player = new Player(Display.WIDTH/2-50, Display.HEIGHT-75, 100, 100);
 		naveInvasora = new Ovni(0,0);
 		addEnemies();
 
 	}
 	
 	public void update(double delta) {
-		player.update(delta);
 		naveInvasora.update(delta, player);
 		updateAliens(delta);
 	}
@@ -42,7 +40,6 @@ public class GameScreen  {
 		g.setColor(Color.red);
 		g.drawString("Health: ", 5, 35);
 		
-		player.draw(g);
 		naveInvasora.draw(g);
 		drawAliens(g);
 		}
