@@ -42,5 +42,8 @@ public class GameScreen  {
 		player.draw(g);
 		naveInvasora.draw(g);
 		bloqueClasico.drawAliens(g);
-		}	
+		}
+	public Jugador getPlayer(){
+		return player;
+	}
 }
